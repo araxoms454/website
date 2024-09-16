@@ -1,20 +1,27 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Replace with your default branch if necessary
 
 jobs:
   pages-build-deployment:
     runs-on: ubuntu-latest
+
     permissions:
-      pages: write
-      id-token: write
+      pages: write    # Grants access to the GitHub Pages API
+      id-token: write # Required for authentication with OIDC
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
+      # Step 1: Checkout the repository's contents
+      - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Deploy static HTML files to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
