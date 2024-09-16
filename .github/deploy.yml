@@ -1,0 +1,4 @@
+name: Deploy
+on: [push]
+jobs:
+  pages-build-deployment:
