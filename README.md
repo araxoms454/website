@@ -15,8 +15,6 @@ As soon as you push changes (click on sync on Visual Studio) the website will be
 
 <details closed>
 <summary>Manual deployment steps</summary>
-<br>
-<br><br>
 <pre>
 To public new changes, open the following link and click on `Re-run all jobs`
 https://github.com/araxoms454/website/actions/runs/10887229548
