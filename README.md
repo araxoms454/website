@@ -11,7 +11,7 @@
 
 # Publish changes
 
-As soon as you psuh changes (click on sync on Visual Studio) the website will be automatically updated in a few seconds.
+As soon as you push changes (click on sync on Visual Studio) the website will be automatically updated in a few seconds.
 
 <details closed>
 <summary>Manual deployment steps</summary>
