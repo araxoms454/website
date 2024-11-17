@@ -98,10 +98,15 @@ nav ul li a:hover::after{
     margin: 20px 0 40px;
 }
 .tab-links{
-    margin-right: 50px;
+    display: inline-block; /* Makes them behave like buttons */
+    padding: 10px 20px; /* Adds spacing inside the button */
+    margin: 0 10px; /* Adds spacing between buttons */
+    font-weight: bold; /* Makes text bold */
     font-size: 18px;
     cursor: pointer;
     position: relative;
+    text-align: center;
+    width: 100px;
 }
 .tab-links::after{
     content: '';
@@ -115,7 +120,7 @@ nav ul li a:hover::after{
 }
 
 .tab-links.active-link::after{
-    width: 50%;
+    width: 100%;
 }
 
 .tab-contents ul li{
@@ -327,7 +332,7 @@ nav .fas{
         padding-top: 50px;
         z-index: 2;
         transition: right0.5s;
-}
+    }
     nav ul li{
         display: block;
         margin: 25px;
