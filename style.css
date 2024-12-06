@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family:  sans-serif;
     box-sizing: border-box;
 }
 html{
@@ -16,8 +16,9 @@ body{
     height: 100vh;
     background-image: url(image/bg.png);
     background-size: cover;
-background-position: center;
+    background-position: center;
 }
+
 .container{
     padding: 10px 10%;
 }
@@ -139,190 +140,192 @@ nav ul li a:hover::after{
 .tab-contents.active-tab{
     display:block;
 }
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Add bounce effect when clicked */
+.about-col-1 img:active {
+    animation: bounce 0.6s ease-in-out;
+}
+
+
+
+/* sidemenu for the butoon problem */
+#sidemenu {
+    position: fixed;
+    top: 0;
+    right: -200px; /* Start off-screen */
+    width: 200px;
+    height: 100%;
+    background-color: #ff004f;
+    transition: right 0.5s ease-in-out; /* Smooth slide animation */
+    z-index: 1000;
+}
+.fa-business-time {
+    display: none; /* Hidden by default */
+}
+
+#sidemenu.open .fa-business-time {
+    display: block; /* Show when menu is open */
+}
+
+.fa-bars {
+    display: block; /* Always visible */
+}
+
+
+
+
+
+
 /*-- ----services----- */
-#services{
+#services {
     padding: 30px 0;
 }
-.services-list{
+.services-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
     margin-top: 50px;
 }
-.services-list{
-    background: #262626 ;
+.services-list div {
+    background: #262626;
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-    transition: background0.7s,transform 0.6s;
+    transition: background 0.7s, transform 0.6s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
-.services-list div i{
+.services-list div i {
     font-size: 50px;
     margin-bottom: 30px;
+    transition: transform 0.4s ease-in-out;
 }
-.services-list div h2{
+.services-list div h2 {
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
-.services-list a{
+.services-list div p {
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.services-list a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
     margin-top: 20px;
     display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s, transform 0.4s ease-in-out;
 }
-.services-list div:hover{
+.services-list div:hover {
     background: #ff004f;
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 0, 79, 0.4);
 }
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
+.services-list div:hover i {
+    transform: scale(1.2) translateY(-5px);
 }
-.layer{
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba0(0,0,0,0.6s),#ff004f);
-    border-radius: 10px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 14px;
-    transition: height 0.5s;
+.services-list div:hover p,
+.services-list div:hover a {
+    opacity: 1;
+    transform: translateY(0);
 }
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.layer a{
-    margin-top: 20px;
-    color: #ff004f;
-    text-decoration: none;
-    line-height: 60px;
-    font-size: 18px;
-    background: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-}
-.work:hover img{
-    transform: scale(1.1);
-}
-.work:hover .layer{
-    height: 100%;
-}
-.btn{
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid #ff004f;
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: #fff;
-    transition: background0.5s;
-}
-.btn:hover{
-    background: #ff004f;
-}
-/*-----contact------ */
-.contact-left{
-    flex-basis: 35%;
 
-}
-.contact-right{
-    flex-basis: 60%;
-}
-.contact-left p{
-    margin-top: 30px;
-}
-.contact-left p i{
-    color: #ff004f;
-    margin-right: 15px;
-    font-size: 25px;
-}
-.social-icons{
-    margin-top: 15px;
-}
-.social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: transform0.5s;
-}
-.social-icons a:hover{
-    color: #ff004f;
-    transform: translateY(-5px);
-}
-.btn.btn2{
-    display: inline-block;
-    background: #ff004f;
-}
-.contact-right form{
-    width: 100%;
-}
-from input, form textarea{
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-
-}
-form .btn2{
-    padding: 14px 60px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-.copyright{
-    width: 100%;
-    text-align: center;
-    background: #262626;
-    font-weight: 300;
-    margin-top: 20px;
-}
-.copyright i{
-    color: #ff004f;
-}
 /* -----------css for small screen------- */
 nav .fas{
     display: none;
 }
 
-@media only screen and (max-width :600px){
-    #header{
+
+
+/* Default styles for larger screens */
+.shop-btn {
+    display: none; /* Hide the shop button on larger screens */
+}
+
+/* Media query for screens 600px or less */
+@media only screen and (max-width: 600px) {
+    .shop-btn {
+        display: block; /* Show the button only on smaller screens */
+        font-size: 16px;
+        color: #fff;
+        background: #ff004f;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        position: relative;
+        z-index: 3; /* Ensure it’s above other elements */
+    }
+}
+
+nav .fas {
+    display: none; /* Hide the icon on larger screens */
+}
+
+/* Media query for screens 600px or less */
+@media only screen and (max-width: 600px) {
+    #header {
         background-image: url(images.html);
     }
-    .header-text{
+    .header-text {
         margin-top: 100%;
         font-size: 16px;
     }
-    .header-text h1{
+    .header-text h1 {
         font-size: 30px;
     }
-    nav .fas{
-        display: block;
+/* Hide the bars icon by default, show it on smaller screens */
+.fa-bars {
+    display: none; /* Hidden by default */
+}
+
+@media only screen and (max-width: 600px) {
+    .fa-bars {
+        display: block; /* Show on smaller screens */
+    }
+    .fa-business-time {
+        display: none; /* Hide on smaller screens */
+    }
+}
+
+#sidemenu.open .fa-business-time {
+    display: block; /* Show the close icon when the menu is open */
+}
+
+.fa-business-time {
+    display: none; /* Hidden by default */
+}
+
+/* Ensure your menu itself is positioned correctly */
+#sidemenu {
+    position: fixed;
+    top: 0;
+    right: -200px; /* Hidden by default */
+    width: 200px;
+    height: 100%;
+    background-color: #ff004f;
+    transition: right 0.5s ease-in-out;
+}
+
+    nav .fas {
+        display: block; /* Show the icon on smaller screens */
         font-size: 25px;
     }
-    nav ul{
+    nav ul {
         background: #ff004f;
         position: fixed;
         top: 0;
@@ -331,43 +334,211 @@ nav .fas{
         height: 100vh;
         padding-top: 50px;
         z-index: 2;
-        transition: right0.5s;
+        transition: right 0.5s; /* Add a space between `right` and `0.5s` */
     }
-    nav ul li{
+    nav ul li {
         display: block;
         margin: 25px;
     }
-    nav ul .fas{
+    nav ul .fas {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
     }
-    .sub-title{
+    .sub-title {
         font-size: 40px;
     }
-    .about-col-1, .about-col-2{
+    .about-col-1, .about-col-2 {
         flex-basis: 100%;
     }
-    .about-col-1{
+    .about-col-1 {
         margin-bottom: 30px;
     }
-    .about-col-2{
+    .about-col-2 {
         font-size: 14px;
     }
-    .tab-links{
+    .tab-links {
         font-size: 16px;
         margin-right: 20px;
     }
-    .contact-left, .contact-right{
-    flex-basis: 100%;       
+    .contact-left, .contact-right {
+        flex-basis: 100%;
     }
-    .copyright{
+    .copyright {
         font-size: 14px;
     }
 }
-#msg{
+
+
+/* Contact Section Styles */
+#contact {
+    padding: 80px 10%;
+    background: #1a1a1a;
+    color: #ababab;
+}
+
+.contact-left, .contact-right {
+    flex-basis: 48%; /* Evenly divide the left and right sections */
+}
+
+.contact-left {
+    margin-bottom: 30px;
+}
+
+.contact-left h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-left p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #ababab;
+}
+
+.contact-left p i {
+    color: #ff004f;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.socialicons {
+    margin: 20px 0;
+}
+
+.socialicons a {
+    text-decoration: none;
+    color: #ababab;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socialicons a:hover {
+    transform: scale(1.2);
+    color: #ff004f;
+}
+
+.btn.btn2 {
+    display: inline-block;
+    background: #ff004f;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover animation */
+.btn.btn2:hover {
+    background: #e60042;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 0, 79, 0.4);
+}
+/* Tick mark styles (hidden initially) */
+#download-tick {
+    display: inline-block;
+    margin-left: 10px;
     color: #61b752;
-    margin-top: -20px;
+    font-size: 20px;
+    vertical-align: middle;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none; /* Hides the tick mark initially */
+}
+
+/* Tick mark animation */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+.contact-right form {
+    width: 100%;
+}
+
+.contact-right form input,
+.contact-right form textarea {
+    width: 100%;
+    background: #262626;
+    border: none;
+    outline: none;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.contact-right form .btn2 {
+    cursor: pointer;
+}
+
+#msg {
+    color: #61b752;
+    margin-top: 10px;
     display: block;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .contact-left, .contact-right {
+        flex-basis: 100%; /* Stack left and right sections on top of each other */
+    }
+
+    .contact-left {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #contact {
+        padding: 40px 5%;
+    }
+
+    .contact-left h1 {
+        font-size: 30px;
+    }
+
+    .socialicons a {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .btn.btn2 {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Copyright Styles */
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    color: #ababab;
+}
+
+.copyright i {
+    color: #ff004f;
 }

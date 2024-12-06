@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Antara portfolio</title>
     <link rel="stylesheet" href="style.css">  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/83a54ae86d.js" crossorigin="anonymous"></script>  
     </head>
 <body>
 <div id="header">
     <div class="container">
         <nav>
-        <img src="image/logo_name.png" class="logo">
+        <img src="image/logo.png" class="logo">
         <ul id ="sidemenu">
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -21,11 +22,11 @@
             <li><a href="#contact">Contact</a></li>
             <i class="fa-solid fa-business-time" onclick="closemenu()"></i>
         </ul>
-        <i class="fa-solid fa-bars" onclick="openmenu"></i>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
     </nav>
         <div class="header-text">
-            <p>Graphic Designer</p>
-            <h1>Hello, I am <span>Antara</span><br> Welcome to my portfolio</h1>
+            <p>Graphic and Web deisgner</p>
+            <h1>Hello, I am <span>Antara</span><br> Welcome to my Portfolio</h1>
         </div>
     </div>
 </div>
@@ -50,8 +51,8 @@
         </div>
         <div class="tab-contents active-tab" id="skills">
             <ul>
-                <li><span>Graphic/UX</span><br>Designing Web/App Interfaces</li>
-                <li><span>Web Development</span><br>Web app Development</li>
+                <li><span>Graphic/UI</span><br>Designing logos and icons</li>
+                <li><span>Web Development</span><br>Website creation</li>
             </ul>
         </div>
         <div class="tab-contents active-tab" id="education">
@@ -69,18 +70,16 @@
         <div class="services-list">
             <div>
                 <i class="fa-brands fa-app-store"></i>
-                <h2>Graphic and Web Design</h2>
-                <p>design unique logos, cohesive brand materials, brochures, flyers, posters, and custom illustrations.
+                <h2>Graphic Design</h2>
+                <p>I speacialize in designing unique logos, cohesive brand materials, brochures, flyers, posters, and custom illustrations.
                     <br>I also create user-friendly websites, improve user experience, ensure sites work on all devices, and build online stores.</p>
             <a href="#">Learn More</a>
                 </div>
                 <div>
                     <i class="fa-solid fa-crop"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>As a UI/UX designer, I specialize in creating visually appealing and user-friendly digital interfaces. 
-                        My services encompass a range of design activities, including user research, wireframing, prototyping, and usability testing. By blending aesthetics with functionality,<br>
-                    I ensure that each product not only looks great but also provides an intuitive and seamless user experience. 
-                        My goal is to enhance user satisfaction and engagement through thoughtful design solutions that meet both user needs and business objectives.</p>
+                    <h2>Web designer</h2>
+                    <p>I also specialize in front-end web development.
+                I combine my design expertise with coding skills in HTML, CSS, and JavaScript to create responsive, visually appealing, and accessible websites. By focusing on clean code and seamless design integration, I deliver interfaces that are both functional and engaging, ensuring a cohesive user experience across devices.</p>
                         <a href="#">Learn More</a>
                     </div>
         </div>
@@ -115,7 +114,7 @@
     <div class="row">
         <div class="contact-left">
             <h1 class="sub-title">Contact Me</h1>
-            <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+            <p><i class="fa-solid fa-paper-plane"></i>araxoms454@gmail.com</p>
             <p><i class="fa-solid fa-phone"></i>+1 123 456 7890</p>
             <div class="socialicons">
                 <a href=""><i class="fab fa-facebook"></i></a>
@@ -142,50 +141,7 @@
 </div>
 
 
-<script>
+<script src="script.js"></script>
     
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
-    
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab")
-}
-
-</script>
-<script>
-    var sidemenu = document.getElementById("sidemenu");
-    function openmenu(){
-        sidemenu.style.right = "0";
-    }
-    function openmenu(){
-    sidemenu.style.right = "200px";
-    }
-</script>
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwkfvARHtZHso973JyWRL_Fx8ASWKvUgRRANk1WhZDbZKd0nM8XDRwhaCj6yGSVI0JK/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById('msg')
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent succesfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
-  
 </body>
 </html>
